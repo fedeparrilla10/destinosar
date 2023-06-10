@@ -1,0 +1,6 @@
+<div *ngFor="let element of elementList">
+  <h3>{{ element.name }}</h3>
+  <p>{{ element.description }}</p>
+  <img [src]="element.img" />
+  <button [routerLink]="['../place-details', element.id]">Ver más info</button>
+</div>
