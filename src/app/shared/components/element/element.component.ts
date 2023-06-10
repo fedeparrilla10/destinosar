@@ -7,5 +7,5 @@ import { PlacesI } from 'src/app/core/models/interfaces/places-interface';
   styleUrls: ['./element.component.scss'],
 })
 export class ElementComponent {
-  @Input() public elementList?: PlacesI[];
+  @Input() public placeList?: PlacesI[];
 }

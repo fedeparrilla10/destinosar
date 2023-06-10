@@ -1,6 +1,9 @@
-<div *ngFor="let element of elementList">
-  <h3>{{ element.name }}</h3>
-  <p>{{ element.description }}</p>
-  <img [src]="element.img" />
-  <button [routerLink]="['../place-details', element.id]">Ver más info</button>
-</div>
+<section class="places-container">
+  <article *ngFor="let place of placeList" class="place-card">
+    <h2 class="place-title">{{ place.name }}</h2>
+    <p>{{ place.description }}</p>
+    <p>{{ place.province }}</p>
+    <img [src]="place.mainimg" />
+    <button [routerLink]="['../place-details', place.id]">Ver más info</button>
+  </article>
+</section>

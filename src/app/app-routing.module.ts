@@ -26,6 +26,14 @@ const routes: Routes = [
         (m) => m.PlaceDetailsModule
       ),
   },
+  {
+    path: 'about-us',
+    pathMatch: 'prefix',
+    loadChildren: () =>
+      import('src/app/features/about-us/about-us.module').then(
+        (m) => m.AboutUsModule
+      ),
+  },
 ];
 
 @NgModule({

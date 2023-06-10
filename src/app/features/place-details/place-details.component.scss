@@ -1,0 +1,48 @@
+.place-details-container {
+    margin: 20px;
+
+    .place-details{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 50px;
+        margin: 30px;
+
+        .place-details-text {
+            font-size: 18px;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            text-align: center;
+            gap: 10px;
+            width: 100%;
+
+            .place-title {
+                font-size: 54px;
+                letter-spacing: 3px;
+            }
+
+            .place-details-activities-container {
+                font-size: 15px;
+
+                ul {
+                    display: flex;
+                    justify-content: center;
+                    gap: 25px;
+                }
+            }
+        }
+
+        .place-details-gallery {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+    
+            img {
+                    object-fit: cover;
+            }
+        }
+    }
+}

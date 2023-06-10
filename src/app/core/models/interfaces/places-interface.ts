@@ -4,7 +4,10 @@ export interface ApiPlacesI {
   province: string;
   region: string;
   description: string;
-  img: string;
+  long_description: string;
+  activities: ActivitiesI[];
+  mainimg: string;
+  images: ImageI[];
   id: string;
   language?: string;
   population?: number;
@@ -17,7 +20,20 @@ export interface PlacesI {
   province: string;
   region: string;
   description: string;
-  img: string;
+  long_description: string;
+  activities: ActivitiesI[];
+  mainimg: string;
+  images: ImageI[];
   id: string;
 }
 
+export interface ActivitiesI {
+  name: string;
+  description: string;
+  type: string;
+}
+
+export interface ImageI {
+  id: string;
+  url: string;
+}

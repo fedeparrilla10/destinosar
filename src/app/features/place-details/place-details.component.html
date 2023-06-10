@@ -1,1 +1,31 @@
-<div>{{ detailedPlace?.name }}</div>
+<section class="place-details-container">
+  <article class="place-details">
+    <div class="place-details-text">
+      <h2 class="place-title">{{ detailedPlace?.name }}</h2>
+      <h4>{{ detailedPlace?.province }}</h4>
+      <h5>{{ detailedPlace?.region }}</h5>
+
+      <div
+        *ngIf="allActivities && allActivities.length > 0"
+        class="place-details-activities-container"
+      >
+        <ul>
+          <li *ngFor="let activity of allActivities">{{ activity.type }}</li>
+        </ul>
+      </div>
+
+      <p>{{ detailedPlace?.long_description }}</p>
+    </div>
+
+    <div
+      *ngIf="allImages && allImages.length > 0"
+      class="place-details-gallery"
+    >
+      <img
+        *ngFor="let image of allImages"
+        [src]="image.url"
+        [alt]="detailedPlace?.name"
+      />
+    </div>
+  </article>
+</section>
