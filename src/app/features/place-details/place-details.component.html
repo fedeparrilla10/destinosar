@@ -1,20 +1,26 @@
 <section class="place-details-container">
   <article class="place-details">
     <div class="place-details-text">
-      <h2 class="place-title">{{ detailedPlace?.name }}</h2>
-      <h4>{{ detailedPlace?.province }}</h4>
-      <h5>{{ detailedPlace?.region }}</h5>
+      <div class="place-details-titles">
+        <h2 class="place-title">{{ detailedPlace?.name }}</h2>
+        <h4>{{ detailedPlace?.province }}</h4>
+        <h5>{{ detailedPlace?.region }}</h5>
+      </div>
+
+      <p>{{ detailedPlace?.long_description }}</p>
 
       <div
         *ngIf="allActivities && allActivities.length > 0"
         class="place-details-activities-container"
       >
-        <ul>
-          <li *ngFor="let activity of allActivities">{{ activity.type }}</li>
-        </ul>
+        <div
+          *ngFor="let activity of allActivities"
+          class="place-details-activities-box"
+        >
+          <h4 class="activity-title">{{ activity.name }}</h4>
+          <p>{{ activity.description }}</p>
+        </div>
       </div>
-
-      <p>{{ detailedPlace?.long_description }}</p>
     </div>
 
     <div

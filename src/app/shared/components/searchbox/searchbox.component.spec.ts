@@ -1,16 +1,16 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { OtherInfoComponent } from './other-info.component';
+import { SearchboxComponent } from './searchbox.component';
 
-describe('OtherInfoComponent', () => {
-  let component: OtherInfoComponent;
-  let fixture: ComponentFixture<OtherInfoComponent>;
+describe('SearchboxComponent', () => {
+  let component: SearchboxComponent;
+  let fixture: ComponentFixture<SearchboxComponent>;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [OtherInfoComponent]
+      declarations: [SearchboxComponent]
     });
-    fixture = TestBed.createComponent(OtherInfoComponent);
+    fixture = TestBed.createComponent(SearchboxComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

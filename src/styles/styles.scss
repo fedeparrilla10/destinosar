@@ -3,7 +3,7 @@
 @import './fonts/fonts.scss';
 
 * {
-    font-family: 'Roboto', sans-serif;
+    font-family: $primary-font;
 }
 
 img {

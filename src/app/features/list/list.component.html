@@ -1,1 +1,8 @@
-<app-element [placeList]="allPlaces"></app-element>
+<app-searchbox (inputChanges)="findInputChanges($event)"></app-searchbox>
+
+<section class="places-container">
+  <app-element
+    *ngFor="let place of allPlaces | filter : searchBox"
+    [eachPlace]="place"
+  ></app-element>
+</section>

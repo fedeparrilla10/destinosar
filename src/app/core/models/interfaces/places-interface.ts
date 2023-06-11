@@ -1,8 +1,11 @@
+import { Region } from './../types/region-type';
+import { Province } from './../types/region-type';
+
 export interface ApiPlacesI {
   createdAt?: string;
   name: string;
-  province: string;
-  region: string;
+  province: Province;
+  region: Region;
   description: string;
   long_description: string;
   activities: ActivitiesI[];
@@ -17,8 +20,8 @@ export interface ApiPlacesI {
 
 export interface PlacesI {
   name: string;
-  province: string;
-  region: string;
+  province: Province;
+  region: Region;
   description: string;
   long_description: string;
   activities: ActivitiesI[];

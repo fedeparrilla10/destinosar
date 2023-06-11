@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PlacesI } from 'src/app/core/models/interfaces/places-interface';
 import { PlacesService } from 'src/app/core/services/places.service';
-
 @Component({
   selector: 'app-list',
   templateUrl: './list.component.html',
@@ -9,6 +8,7 @@ import { PlacesService } from 'src/app/core/services/places.service';
 })
 export class ListComponent implements OnInit {
   public allPlaces: PlacesI[] = [];
+  public searchBox: string = '';
 
   constructor(private placesService: PlacesService) {}
 
@@ -20,5 +20,9 @@ export class ListComponent implements OnInit {
     this.placesService.getPlaces().subscribe((places: PlacesI[]) => {
       this.allPlaces = places;
     });
+  }
+
+  findInputChanges(value: string) {
+    this.searchBox = value;
   }
 }

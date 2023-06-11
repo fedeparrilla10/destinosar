@@ -1,23 +1,17 @@
-.places-container {
+@import "../../../../styles/general/variables";
+
+.place-card {
+    width: 500px;
     display: flex;
+    flex-direction: column;
     align-items: center;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    margin: 40px;
+    text-align: center;
+    gap: 10px;
+    margin-bottom: 30px;
 
-    .place-card {
-        width: 500px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        gap: 10px;
-        margin-bottom: 30px;
-
-        .place-title {
-            letter-spacing: 1.5px;
-            font-size: 32px;
-            font-family: 'Josefin Sans', sans-serif;
-        }
+    .place-title {
+        letter-spacing: 1.5px;
+        font-size: 32px;
+        font-family: $title-font;
     }
 }

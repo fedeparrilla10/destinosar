@@ -1,9 +1,9 @@
-<section class="places-container">
-  <article *ngFor="let place of placeList" class="place-card">
-    <h2 class="place-title">{{ place.name }}</h2>
-    <p>{{ place.description }}</p>
-    <p>{{ place.province }}</p>
-    <img [src]="place.mainimg" />
-    <button [routerLink]="['../place-details', place.id]">Ver más info</button>
-  </article>
-</section>
+<article class="place-card">
+  <h2 class="place-title">{{ eachPlace?.name }}</h2>
+  <p>{{ eachPlace?.description }}</p>
+  <p>{{ eachPlace?.province }}</p>
+  <img [src]="eachPlace?.mainimg" />
+  <button [routerLink]="['../place-details', eachPlace?.id]">
+    Ver más info
+  </button>
+</article>
