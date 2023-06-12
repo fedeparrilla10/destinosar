@@ -1,12 +1,3 @@
 @import './general/general.scss';
 @import './elements/elements.scss';
 @import './fonts/fonts.scss';
-
-* {
-    font-family: $primary-font;
-}
-
-img {
-    width: 400px;
-    height: 400px;
-}

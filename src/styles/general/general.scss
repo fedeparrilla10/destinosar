@@ -1,2 +1,17 @@
 @import 'reset';
 @import 'variables';
+
+* {
+    font-family: $primary-font;
+}
+
+img {
+    width: 400px;
+    height: 400px;
+}
+
+input {
+    width: 200px;
+    height: 30px;
+    padding: 12px;
+}

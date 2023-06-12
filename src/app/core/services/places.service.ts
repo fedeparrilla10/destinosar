@@ -29,4 +29,8 @@ export class PlacesService {
   public getPlace(id: string): Observable<PlacesI> {
     return this.http.get<ApiPlacesI>(`${this.BASE_URL}/places/${id}`);
   }
+
+  public postPlace(formBody: PlacesI): Observable<PlacesI> {
+    return this.http.post<PlacesI>(`${this.BASE_URL}/places`, formBody);
+  }
 }

@@ -34,6 +34,14 @@ const routes: Routes = [
         (m) => m.AboutUsModule
       ),
   },
+  {
+    path: 'user-list',
+    pathMatch: 'prefix',
+    loadChildren: () =>
+      import('src/app/features/user-list/user-list.module').then(
+        (m) => m.UserListModule
+      ),
+  },
 ];
 
 @NgModule({

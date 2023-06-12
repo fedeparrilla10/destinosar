@@ -4,11 +4,22 @@ import { ElementComponent } from './components/element/element.component';
 import { RouterModule } from '@angular/router';
 import { FilterPipe } from './pipes/filter/filter.pipe';
 import { SearchboxComponent } from './components/searchbox/searchbox.component';
+import { PlacesFormComponent } from './components/places-form/places-form.component';
 import { FormsModule } from '@angular/forms';
 
 @NgModule({
-  declarations: [ElementComponent, FilterPipe, SearchboxComponent],
+  declarations: [
+    ElementComponent,
+    FilterPipe,
+    SearchboxComponent,
+    PlacesFormComponent,
+  ],
   imports: [CommonModule, RouterModule, FormsModule],
-  exports: [ElementComponent, FilterPipe, SearchboxComponent],
+  exports: [
+    ElementComponent,
+    FilterPipe,
+    SearchboxComponent,
+    PlacesFormComponent,
+  ],
 })
 export class SharedModule {}
