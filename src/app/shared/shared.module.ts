@@ -5,7 +5,7 @@ import { RouterModule } from '@angular/router';
 import { FilterPipe } from './pipes/filter/filter.pipe';
 import { SearchboxComponent } from './components/searchbox/searchbox.component';
 import { PlacesFormComponent } from './components/places-form/places-form.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -14,7 +14,7 @@ import { FormsModule } from '@angular/forms';
     SearchboxComponent,
     PlacesFormComponent,
   ],
-  imports: [CommonModule, RouterModule, FormsModule],
+  imports: [CommonModule, RouterModule, FormsModule, ReactiveFormsModule],
   exports: [
     ElementComponent,
     FilterPipe,

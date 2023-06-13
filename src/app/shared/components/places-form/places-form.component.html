@@ -1,1 +1,63 @@
-<p>HOLA</p>
+<div class="form-container">
+  <form *ngIf="placesForm" [formGroup]="placesForm">
+    <label for="name">Nombre: </label>
+    <input type="text" formControlName="name" />
+
+    <label for="province">Provincia: </label>
+    <input type="text" formControlName="province" />
+
+    <label for="region">Región: </label>
+    <input type="text" formControlName="region" />
+
+    <label for="description">Descripción: </label>
+    <input type="text" formControlName="description" />
+
+    <label for="long_description">Descripción Larga: </label>
+    <input type="text" formControlName="long_description" />
+
+    <div formArrayName="activities">
+      <button (click)="addActivity()">Añadir Actividad</button>
+      <div
+        *ngFor="let activity of activities.controls; let i = index"
+        [formGroupName]="i"
+      >
+        <label>
+          Nombre:
+          <input type="text" formControlName="name" />
+        </label>
+
+        <label>
+          Descripción:
+          <textarea formControlName="description"></textarea>
+        </label>
+
+        <label>
+          Tipo:
+          <input type="text" formControlName="type" />
+        </label>
+      </div>
+    </div>
+
+    <div>
+      <label for="mainimg">Portada: </label>
+      <input type="text" formControlName="mainimg" />
+    </div>
+
+    <div formArrayName="images">
+      <button (click)="addImage()">Añadir Imagen</button>
+
+      <div
+        *ngFor="let image of images.controls; let i = index"
+        [formGroupName]="i"
+      >
+        <label for="id">ID: </label>
+        <input type="text" formControlName="id" />
+        <input type="text" formControlName="url" />
+      </div>
+    </div>
+
+    <button type="submit" (click)="newCustomPlace()">Submit</button>
+  </form>
+
+  <p>{{ placesForm?.status }}</p>
+</div>
