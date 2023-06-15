@@ -3,7 +3,11 @@
   <p>{{ eachPlace?.description }}</p>
   <p>{{ eachPlace?.province }}</p>
   <img [src]="eachPlace?.mainimg" />
-  <button [routerLink]="['../place-details', eachPlace?.id]">
-    Ver más info
-  </button>
+  <div class="button-container">
+    <button [routerLink]="['../place-details', eachPlace?.id]">
+      Ver más info
+    </button>
+    <button [routerLink]="['../edit-place', eachPlace?.id]">Editar</button>
+    <button>Eliminar</button>
+  </div>
 </article>

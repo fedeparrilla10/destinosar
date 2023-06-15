@@ -1,57 +1,84 @@
 <div class="form-container">
-  <form *ngIf="placesForm" [formGroup]="placesForm">
-    <label for="name">Nombre: </label>
-    <input type="text" formControlName="name" />
+  <form *ngIf="placesForm" [formGroup]="placesForm" class="places-form">
+    <div class="general-info">
+      <h3>Información General</h3>
 
-    <label for="province">Provincia: </label>
-    <input type="text" formControlName="province" />
+      <div>
+        <label for="name">Nombre: </label>
+        <input type="text" formControlName="name" />
+      </div>
 
-    <label for="region">Región: </label>
-    <input type="text" formControlName="region" />
+      <div>
+        <label for="province">Provincia: </label>
+        <input type="text" formControlName="province" />
+      </div>
 
-    <label for="description">Descripción: </label>
-    <input type="text" formControlName="description" />
+      <div>
+        <label for="region">Región: </label>
+        <input type="text" formControlName="region" />
+      </div>
 
-    <label for="long_description">Descripción Larga: </label>
-    <input type="text" formControlName="long_description" />
+      <div>
+        <label for="description">Descripción: </label>
+        <input type="text" formControlName="description" />
+      </div>
 
-    <div formArrayName="activities">
-      <button (click)="addActivity()">Añadir Actividad</button>
+      <div class="long_description-class">
+        <label for="long_description">Descripción Larga: </label>
+        <textarea
+          formControlName="long_description"
+          cols="20"
+          rows="2"
+        ></textarea>
+      </div>
+    </div>
+
+    <div formArrayName="activities" class="activities-form">
+      <h3>Actividades</h3>
+
+      <button (click)="addNewActivity()">Nueva Actividad</button>
       <div
         *ngFor="let activity of activities.controls; let i = index"
         [formGroupName]="i"
       >
-        <label>
-          Nombre:
-          <input type="text" formControlName="name" />
-        </label>
+        <div>
+          <label>
+            Nombre:
+            <input type="text" formControlName="name" />
+          </label>
 
-        <label>
-          Descripción:
-          <textarea formControlName="description"></textarea>
-        </label>
+          <label>
+            Descripción:
+            <input type="text" formControlName="description" />
+          </label>
 
-        <label>
-          Tipo:
-          <input type="text" formControlName="type" />
-        </label>
+          <label>
+            Tipo:
+            <input type="text" formControlName="type" />
+          </label>
+        </div>
       </div>
     </div>
 
     <div>
+      <h3>Imagen Principal</h3>
       <label for="mainimg">Portada: </label>
       <input type="text" formControlName="mainimg" />
     </div>
 
-    <div formArrayName="images">
-      <button (click)="addImage()">Añadir Imagen</button>
+    <div formArrayName="images" class="images-form">
+      <h3>Imágenes</h3>
+
+      <button (click)="addNewImage()">Nueva Imagen</button>
 
       <div
         *ngFor="let image of images.controls; let i = index"
         [formGroupName]="i"
       >
         <label for="id">ID: </label>
-        <input type="text" formControlName="id" />
+        <input type="text" formControlName="id" readonly="readonly" />
+
+        <label for="url">URL: </label>
         <input type="text" formControlName="url" />
       </div>
     </div>
@@ -59,5 +86,11 @@
     <button type="submit" (click)="newCustomPlace()">Submit</button>
   </form>
 
-  <p>{{ placesForm?.status }}</p>
+  <div>
+    <img
+      src="../../../../assets/defaultplace.jpg"
+      alt="Rutas argentinas"
+      class="road-image"
+    />
+  </div>
 </div>

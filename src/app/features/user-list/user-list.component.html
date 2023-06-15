@@ -1,1 +1,12 @@
-<app-places-form></app-places-form>
+<ul>
+  <li routerLinkActive="new-place">
+    <a [routerLink]="'/new-place'">Crear Nuevo Destino</a>
+  </li>
+</ul>
+
+<section class="places-container">
+  <app-element
+    *ngFor="let newPlace of newPlaces"
+    [eachPlace]="newPlace"
+  ></app-element>
+</section>

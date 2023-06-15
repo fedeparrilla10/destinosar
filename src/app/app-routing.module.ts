@@ -21,9 +21,26 @@ const routes: Routes = [
   },
   {
     path: 'place-details/:id',
+    pathMatch: 'prefix',
     loadChildren: () =>
       import('src/app/features/place-details/place-details.module').then(
         (m) => m.PlaceDetailsModule
+      ),
+  },
+  {
+    path: 'new-place',
+    pathMatch: 'prefix',
+    loadChildren: () =>
+      import('src/app/features/new-place/new-place.module').then(
+        (m) => m.NewPlaceModule
+      ),
+  },
+  {
+    path: 'edit-place/:id',
+    pathMatch: 'prefix',
+    loadChildren: () =>
+      import('src/app/features/edit-place/edit-place.module').then(
+        (m) => m.EditPlaceModule
       ),
   },
   {
