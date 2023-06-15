@@ -8,6 +8,6 @@
       Ver más info
     </button>
     <button [routerLink]="['../edit-place', eachPlace?.id]">Editar</button>
-    <button>Eliminar</button>
+    <button (click)="deletePlace($event)">Eliminar</button>
   </div>
 </article>

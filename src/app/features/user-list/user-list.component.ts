@@ -21,4 +21,10 @@ export class UserListComponent {
       this.newPlaces = places.filter((place) => parseInt(place.id, 10) > 12);
     });
   }
+
+  public deletePlace(place: PlacesI): void {
+    this.placesService.deletePlace(place.id).subscribe(() => {
+      this.getPlaces();
+    });
+  }
 }

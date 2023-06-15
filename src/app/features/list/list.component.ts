@@ -22,6 +22,12 @@ export class ListComponent implements OnInit {
     });
   }
 
+  public deletePlace(place: PlacesI): void {
+    this.placesService.deletePlace(place.id).subscribe(() => {
+      this.getPlaces();
+    });
+  }
+
   findInputChanges(value: string) {
     this.searchBox = value;
   }

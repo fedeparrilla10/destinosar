@@ -1,5 +1,6 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { PlacesI } from 'src/app/core/models/interfaces/places-interface';
+import { PlacesService } from '../../../core/services/places.service';
 
 @Component({
   selector: 'app-element',
@@ -8,4 +9,11 @@ import { PlacesI } from 'src/app/core/models/interfaces/places-interface';
 })
 export class ElementComponent {
   @Input() public eachPlace?: PlacesI;
+  @Output() public removePlace: EventEmitter<PlacesI> = new EventEmitter();
+
+  deletePlace(event: Event) {
+    event.preventDefault();
+    event.stopPropagation();
+    this.removePlace.emit(this.eachPlace);
+  }
 }

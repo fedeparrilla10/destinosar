@@ -20,7 +20,11 @@ export class PlacesFormComponent implements OnInit {
 
   public placesForm?: FormGroup;
 
-  constructor(private fb: FormBuilder, private placesService: PlacesService) {}
+  constructor(
+    private fb: FormBuilder,
+    private placesService: PlacesService,
+    private router: Router
+  ) {}
 
   ngOnInit() {
     this.placesForm = this.fb.group({
@@ -128,6 +132,7 @@ export class PlacesFormComponent implements OnInit {
         : this.placesService.postPlace(this.placesForm?.value);
       newPlaceRequest.subscribe((place: PlacesI) => {
         this.placesForm?.reset();
+        this.router.navigateByUrl('user-list');
       });
     }
   }

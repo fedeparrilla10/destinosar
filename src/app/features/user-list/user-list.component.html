@@ -8,5 +8,6 @@
   <app-element
     *ngFor="let newPlace of newPlaces"
     [eachPlace]="newPlace"
+    (removePlace)="deletePlace(newPlace)"
   ></app-element>
 </section>

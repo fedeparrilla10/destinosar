@@ -37,4 +37,8 @@ export class PlacesService {
   public putPlace(id: string, formBody: PlacesI): Observable<PlacesI> {
     return this.http.put<PlacesI>(`${this.BASE_URL}/places/${id}`, formBody);
   }
+
+  public deletePlace(id: string): Observable<PlacesI> {
+    return this.http.delete<PlacesI>(`${this.BASE_URL}/places/${id}`);
+  }
 }
