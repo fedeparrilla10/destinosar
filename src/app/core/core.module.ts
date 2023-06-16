@@ -3,22 +3,11 @@ import { CommonModule } from '@angular/common';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { NavbarComponent } from './components/header/navbar/navbar.component';
-import { NotFoundPageComponent } from './components/not-found-page/not-found-page.component';
 import { RouterModule } from '@angular/router';
 
 @NgModule({
-  declarations: [
-    HeaderComponent,
-    FooterComponent,
-    NavbarComponent,
-    NotFoundPageComponent,
-  ],
+  declarations: [HeaderComponent, FooterComponent, NavbarComponent],
   imports: [CommonModule, RouterModule],
-  exports: [
-    HeaderComponent,
-    FooterComponent,
-    NavbarComponent,
-    NotFoundPageComponent,
-  ],
+  exports: [HeaderComponent, FooterComponent, NavbarComponent],
 })
 export class CoreModule {}

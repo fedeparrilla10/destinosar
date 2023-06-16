@@ -1,8 +1,8 @@
 <article class="place-card">
   <h2 class="place-title">{{ eachPlace?.name }}</h2>
-  <p>{{ eachPlace?.description }}</p>
-  <p>{{ eachPlace?.province }}</p>
-  <img [src]="eachPlace?.mainimg" />
+  <p class="place-description">{{ eachPlace?.description }}</p>
+  <p class="place-province">{{ eachPlace?.province }}</p>
+  <img [src]="eachPlace?.mainimg" class="place-img" />
   <div class="button-container">
     <button [routerLink]="['../place-details', eachPlace?.id]">
       Ver más info

@@ -59,6 +59,14 @@ const routes: Routes = [
         (m) => m.UserListModule
       ),
   },
+  {
+    path: '**',
+    pathMatch: 'prefix',
+    loadChildren: () =>
+      import('src/app/features/not-found/not-found.module').then(
+        (m) => m.NotFoundModule
+      ),
+  },
 ];
 
 @NgModule({

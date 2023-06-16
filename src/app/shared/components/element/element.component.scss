@@ -7,11 +7,28 @@
     align-items: center;
     text-align: center;
     gap: 10px;
-    margin-bottom: 30px;
+    margin-bottom: 40px;
 
     .place-title {
-        letter-spacing: 1.5px;
         font-size: 32px;
         font-family: $title-font;
+    }
+
+    // .place-description {
+
+    // }
+
+    .place-province {
+        font-size: 14px;
+        font-weight: bold;
+    }
+
+    .place-img {
+        border-radius: 10px;
+    }
+
+    .button-container {
+        display: flex;
+        gap: 12px;
     }
 }

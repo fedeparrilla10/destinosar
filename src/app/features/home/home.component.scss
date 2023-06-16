@@ -1,0 +1,16 @@
+.home-container {
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    margin: 0 80px;
+
+    .main-title {
+
+        span {
+            color: #89e9ff;
+        }
+    }
+}

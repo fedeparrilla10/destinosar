@@ -1,0 +1,20 @@
+.not-found-container {
+    height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 20px;
+
+    h2 {
+        font-size: 58px;
+    }
+
+    h4 {
+        font-size: 32px;
+    }
+
+    img {
+        border-radius: 10px;
+    }
+}

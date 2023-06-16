@@ -1,3 +1,12 @@
 @import './general/general.scss';
 @import './elements/elements.scss';
 @import './fonts/fonts.scss';
+
+* {
+    font-family: $primary-font;
+    color: $light-blue;
+}
+
+body {
+    background-color: $navy-blue;
+}

@@ -27,6 +27,12 @@ export class PlacesFormComponent implements OnInit {
   ) {}
 
   ngOnInit() {
+    this.generatePlacesForm();
+    this.putActivities();
+    this.putImages();
+  }
+
+  generatePlacesForm() {
     this.placesForm = this.fb.group({
       name: new FormControl(this.place?.name || '', Validators.required),
       province: new FormControl(
@@ -46,9 +52,6 @@ export class PlacesFormComponent implements OnInit {
       mainimg: new FormControl(this.place?.mainimg || '', Validators.required),
       images: this.fb.array([]),
     });
-
-    this.putActivities();
-    this.putImages();
   }
 
   get activities() {
