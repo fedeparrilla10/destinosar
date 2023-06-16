@@ -9,6 +9,7 @@ import { PlacesService } from 'src/app/core/services/places.service';
 export class ListComponent implements OnInit {
   public allPlaces: PlacesI[] = [];
   public searchBox: string = '';
+  public selectBox: string = '';
 
   constructor(private placesService: PlacesService) {}
 

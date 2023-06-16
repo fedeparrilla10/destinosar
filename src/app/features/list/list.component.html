@@ -5,7 +5,7 @@
 
 <section class="places-container">
   <app-element
-    *ngFor="let place of allPlaces | filter : searchBox"
+    *ngFor="let place of allPlaces | filterName : searchBox"
     [eachPlace]="place"
     (removePlace)="deletePlace(place)"
   >
