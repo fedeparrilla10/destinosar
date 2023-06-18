@@ -6,21 +6,68 @@
       <div>
         <label for="name">Nombre: </label>
         <input type="text" formControlName="name" />
+
+        <p
+          class="error-msg"
+          *ngIf="
+            !nameControl?.valid && (nameControl?.dirty || nameControl?.touched)
+          "
+        >
+          El campo es obligatorio.
+        </p>
       </div>
 
       <div>
         <label for="province">Provincia: </label>
-        <input type="text" formControlName="province" />
+        <select formControlName="province">
+          <option *ngFor="let province of provinceArray" [value]="province">
+            {{ province }}
+          </option>
+        </select>
+
+        <p
+          class="error-msg"
+          *ngIf="
+            !provinceControl?.valid &&
+            (provinceControl?.dirty || provinceControl?.touched)
+          "
+        >
+          El campo es obligatorio.
+        </p>
       </div>
 
       <div>
         <label for="region">Región: </label>
-        <input type="text" formControlName="region" />
+        <select formControlName="region">
+          <option *ngFor="let region of regionArray" [value]="region">
+            {{ region }}
+          </option>
+        </select>
+
+        <p
+          class="error-msg"
+          *ngIf="
+            !regionControl?.valid &&
+            (regionControl?.dirty || regionControl?.touched)
+          "
+        >
+          El campo es obligatorio.
+        </p>
       </div>
 
       <div>
         <label for="description">Descripción: </label>
         <input type="text" formControlName="description" />
+
+        <p
+          class="error-msg"
+          *ngIf="
+            !descriptionControl?.valid &&
+            (descriptionControl?.dirty || descriptionControl?.touched)
+          "
+        >
+          El campo es obligatorio.
+        </p>
       </div>
 
       <div class="long_description-class">
@@ -30,6 +77,16 @@
           cols="20"
           rows="2"
         ></textarea>
+
+        <p
+          class="error-msg"
+          *ngIf="
+            !longDescriptionControl?.valid &&
+            (longDescriptionControl?.dirty || longDescriptionControl?.touched)
+          "
+        >
+          El campo es obligatorio.
+        </p>
       </div>
     </div>
 
@@ -65,6 +122,13 @@
       <div>
         <label for="mainimg">Portada: </label>
         <input type="text" formControlName="mainimg" />
+
+        <p
+          class="error-msg"
+          *ngIf="!mainImage?.valid && (mainImage?.dirty || mainImage?.touched)"
+        >
+          El campo es obligatorio.
+        </p>
       </div>
     </div>
 

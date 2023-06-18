@@ -7,6 +7,7 @@ export type Region =
 
 export type Province =
   | ''
+  | 'Todas las provincias'
   | 'Buenos Aires'
   | 'Catamarca'
   | 'Chaco'

@@ -9,6 +9,10 @@ import {
 import { Router } from '@angular/router';
 import { PlacesI } from 'src/app/core/models/interfaces/places-interface';
 import { PlacesService } from '../../../core/services/places.service';
+import { Province } from 'src/app/core/models/types/region-type';
+import { PROVINCE_ARRAY } from 'src/app/core/models/constants/constants';
+import { Region } from 'src/app/core/models/types/region-type';
+import { REGION_ARRAY } from 'src/app/core/models/constants/constants';
 
 @Component({
   selector: 'app-places-form',
@@ -17,6 +21,9 @@ import { PlacesService } from '../../../core/services/places.service';
 })
 export class PlacesFormComponent implements OnInit {
   @Input() public place?: PlacesI;
+
+  public provinceArray: Province[] = PROVINCE_ARRAY;
+  public regionArray: Region[] = REGION_ARRAY;
 
   public placesForm?: FormGroup;
 
@@ -54,6 +61,34 @@ export class PlacesFormComponent implements OnInit {
     });
   }
 
+  //Validator Controls
+
+  get nameControl() {
+    return this.placesForm?.get('name');
+  }
+
+  get provinceControl() {
+    return this.placesForm?.get('province');
+  }
+
+  get regionControl() {
+    return this.placesForm?.get('region');
+  }
+
+  get descriptionControl() {
+    return this.placesForm?.get('description');
+  }
+
+  get longDescriptionControl() {
+    return this.placesForm?.get('long_description');
+  }
+
+  get mainImage() {
+    return this.placesForm?.get('mainimg');
+  }
+
+  //ArrayForms
+
   get activitiesArray() {
     return this.placesForm?.get('activities') as FormArray;
   }
@@ -62,7 +97,7 @@ export class PlacesFormComponent implements OnInit {
     return this.placesForm?.get('images') as FormArray;
   }
 
-  addNewActivity() {
+  public addNewActivity() {
     if (this.activitiesArray.length < 3) {
       this.activitiesArray.push(
         this.fb.group({
@@ -74,7 +109,7 @@ export class PlacesFormComponent implements OnInit {
     }
   }
 
-  putActivities() {
+  public putActivities() {
     if (this.place?.activities) {
       this.place?.activities.forEach((activity) => {
         this.activitiesArray.push(
@@ -96,7 +131,7 @@ export class PlacesFormComponent implements OnInit {
     }
   }
 
-  addNewImage() {
+  public addNewImage() {
     if (this.imagesArray.length < 4) {
       const id = (this.imagesArray.length + 1).toString();
       this.imagesArray.push(
@@ -108,7 +143,7 @@ export class PlacesFormComponent implements OnInit {
     }
   }
 
-  putImages() {
+  public putImages() {
     if (this.place?.images) {
       this.place?.images.forEach((image) => {
         this.imagesArray.push(
@@ -128,7 +163,7 @@ export class PlacesFormComponent implements OnInit {
     }
   }
 
-  newCustomPlace() {
+  public newCustomPlace() {
     if (this.placesForm?.valid) {
       const newPlaceRequest = this.place
         ? this.placesService.putPlace(this.place.id, this.placesForm.value)
