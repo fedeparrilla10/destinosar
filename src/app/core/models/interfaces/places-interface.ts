@@ -16,6 +16,7 @@ export interface ApiPlacesI {
   population?: number;
   latitude?: number;
   longitude?: number;
+  isCustom: boolean;
 }
 
 export interface PlacesI {
@@ -28,6 +29,7 @@ export interface PlacesI {
   mainimg: string;
   images: ImageI[];
   id: string;
+  isCustom: boolean;
 }
 
 export interface ActivitiesI {

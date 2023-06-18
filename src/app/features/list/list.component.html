@@ -1,11 +1,22 @@
-<app-searchbox
-  (inputChanges)="findInputChanges($event)"
-  class="search-box"
-></app-searchbox>
+<div class="filter-container">
+  <app-searchbox
+    (inputChanges)="findInputChanges($event)"
+    class="search-box"
+  ></app-searchbox>
+
+  <app-filterbox
+    (optionChanges)="findProvinceChanges($event)"
+    class="filter-box"
+  ></app-filterbox>
+</div>
 
 <section class="places-container">
   <app-element
-    *ngFor="let place of allPlaces | filterName : searchBox"
+    *ngFor="
+      let place of allPlaces
+        | filterProvince : selectedProvince
+        | filterName : searchFilter
+    "
     [eachPlace]="place"
     (removePlace)="deletePlace(place)"
   >

@@ -38,7 +38,7 @@
 
       <button (click)="addNewActivity()">Nueva Actividad</button>
       <div
-        *ngFor="let activity of activities.controls; let i = index"
+        *ngFor="let activity of activitiesArray.controls; let i = index"
         [formGroupName]="i"
       >
         <div>
@@ -60,10 +60,12 @@
       </div>
     </div>
 
-    <div>
+    <div class="main-image-form">
       <h3>Imagen Principal</h3>
-      <label for="mainimg">Portada: </label>
-      <input type="text" formControlName="mainimg" />
+      <div>
+        <label for="mainimg">Portada: </label>
+        <input type="text" formControlName="mainimg" />
+      </div>
     </div>
 
     <div formArrayName="images" class="images-form">
@@ -72,7 +74,7 @@
       <button (click)="addNewImage()">Nueva Imagen</button>
 
       <div
-        *ngFor="let image of images.controls; let i = index"
+        *ngFor="let image of imagesArray.controls; let i = index"
         [formGroupName]="i"
       >
         <label for="id">ID: </label>

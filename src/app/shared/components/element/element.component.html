@@ -7,7 +7,14 @@
     <button [routerLink]="['../place-details', eachPlace?.id]">
       Ver más info
     </button>
-    <button [routerLink]="['../edit-place', eachPlace?.id]">Editar</button>
-    <button (click)="deletePlace($event)">Eliminar</button>
+    <button
+      *ngIf="eachPlace?.isCustom"
+      [routerLink]="['../edit-place', eachPlace?.id]"
+    >
+      Editar
+    </button>
+    <button (click)="deletePlace($event)" *ngIf="eachPlace?.isCustom">
+      Eliminar
+    </button>
   </div>
 </article>

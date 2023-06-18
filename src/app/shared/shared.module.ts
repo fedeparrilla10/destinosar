@@ -7,6 +7,7 @@ import { PlacesFormComponent } from './components/places-form/places-form.compon
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FilterNamePipe } from './pipes/filter/filter-name.pipe';
 import { FilterProvincePipe } from './pipes/filter/filter-province.pipe';
+import { FilterboxComponent } from './components/filterbox/filterbox.component';
 
 @NgModule({
   declarations: [
@@ -15,6 +16,7 @@ import { FilterProvincePipe } from './pipes/filter/filter-province.pipe';
     PlacesFormComponent,
     FilterNamePipe,
     FilterProvincePipe,
+    FilterboxComponent,
   ],
   imports: [CommonModule, RouterModule, FormsModule, ReactiveFormsModule],
   exports: [
@@ -23,6 +25,7 @@ import { FilterProvincePipe } from './pipes/filter/filter-province.pipe';
     PlacesFormComponent,
     FilterNamePipe,
     FilterProvincePipe,
+    FilterboxComponent,
   ],
 })
 export class SharedModule {}

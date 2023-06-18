@@ -54,17 +54,17 @@ export class PlacesFormComponent implements OnInit {
     });
   }
 
-  get activities() {
+  get activitiesArray() {
     return this.placesForm?.get('activities') as FormArray;
   }
 
-  get images() {
+  get imagesArray() {
     return this.placesForm?.get('images') as FormArray;
   }
 
   addNewActivity() {
-    if (this.activities.length < 3) {
-      this.activities.push(
+    if (this.activitiesArray.length < 3) {
+      this.activitiesArray.push(
         this.fb.group({
           name: new FormControl(''),
           description: new FormControl(''),
@@ -77,7 +77,7 @@ export class PlacesFormComponent implements OnInit {
   putActivities() {
     if (this.place?.activities) {
       this.place?.activities.forEach((activity) => {
-        this.activities.push(
+        this.activitiesArray.push(
           this.fb.group({
             name: new FormControl(activity.name),
             description: new FormControl(activity.description),
@@ -86,7 +86,7 @@ export class PlacesFormComponent implements OnInit {
         );
       });
     } else {
-      this.activities.push(
+      this.activitiesArray.push(
         this.fb.group({
           name: new FormControl(''),
           description: new FormControl(''),
@@ -97,9 +97,9 @@ export class PlacesFormComponent implements OnInit {
   }
 
   addNewImage() {
-    if (this.images.length < 4) {
-      const id = (this.images.length + 1).toString();
-      this.images.push(
+    if (this.imagesArray.length < 4) {
+      const id = (this.imagesArray.length + 1).toString();
+      this.imagesArray.push(
         this.fb.group({
           id: new FormControl(id),
           url: new FormControl(''),
@@ -111,7 +111,7 @@ export class PlacesFormComponent implements OnInit {
   putImages() {
     if (this.place?.images) {
       this.place?.images.forEach((image) => {
-        this.images.push(
+        this.imagesArray.push(
           this.fb.group({
             id: new FormControl(image.id),
             url: new FormControl(image.url),
@@ -119,7 +119,7 @@ export class PlacesFormComponent implements OnInit {
         );
       });
     } else {
-      this.images.push(
+      this.imagesArray.push(
         this.fb.group({
           id: new FormControl('1'),
           url: new FormControl(''),
@@ -132,8 +132,12 @@ export class PlacesFormComponent implements OnInit {
     if (this.placesForm?.valid) {
       const newPlaceRequest = this.place
         ? this.placesService.putPlace(this.place.id, this.placesForm.value)
-        : this.placesService.postPlace(this.placesForm?.value);
+        : this.placesService.postPlace({
+            ...this.placesForm?.value,
+            isCustom: true,
+          });
       newPlaceRequest.subscribe((place: PlacesI) => {
+        console.log(place);
         this.placesForm?.reset();
         this.router.navigateByUrl('user-list');
       });

@@ -1,8 +1,24 @@
-.search-box {
-    margin-top: 15px;
+
+.filter-container {
     display: flex;
     align-items: center;
     justify-content: center;
+    gap: 20px;
+
+    .search-box {
+        margin-top: 15px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .filter-box {
+        margin-top: 15px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
 }
 
 .places-container {

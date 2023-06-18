@@ -18,7 +18,7 @@ export class UserListComponent {
 
   private getPlaces(): void {
     this.placesService.getPlaces().subscribe((places: PlacesI[]) => {
-      this.newPlaces = places.filter((place) => parseInt(place.id, 10) > 12);
+      this.newPlaces = places.filter((place) => place.isCustom);
     });
   }
 

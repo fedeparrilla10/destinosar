@@ -1,0 +1,24 @@
+input, select, option {
+    color: $navy-blue;
+}
+
+select {
+    width: 200px;
+    height: 24px;
+}
+
+input {
+    width: 200px;
+    height: 15px;
+    padding: 10px;
+}
+
+textarea {
+    height: 40px;
+    width: 350px;
+}
+
+label {
+    font-size: 18px;
+    margin-right: 10px;
+}

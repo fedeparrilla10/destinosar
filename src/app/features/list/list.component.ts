@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PlacesI } from 'src/app/core/models/interfaces/places-interface';
+import { Province } from 'src/app/core/models/types/region-type';
 import { PlacesService } from 'src/app/core/services/places.service';
 @Component({
   selector: 'app-list',
@@ -8,8 +9,8 @@ import { PlacesService } from 'src/app/core/services/places.service';
 })
 export class ListComponent implements OnInit {
   public allPlaces: PlacesI[] = [];
-  public searchBox: string = '';
-  public selectBox: string = '';
+  public searchFilter: string = '';
+  public selectedProvince: Province = '';
 
   constructor(private placesService: PlacesService) {}
 
@@ -29,7 +30,11 @@ export class ListComponent implements OnInit {
     });
   }
 
-  findInputChanges(value: string) {
-    this.searchBox = value;
+  public findInputChanges(value: string) {
+    this.searchFilter = value;
+  }
+
+  public findProvinceChanges(province: Province) {
+    this.selectedProvince = province;
   }
 }

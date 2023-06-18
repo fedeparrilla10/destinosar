@@ -6,6 +6,7 @@ export type Region =
   | 'Centro';
 
 export type Province =
+  | ''
   | 'Buenos Aires'
   | 'Catamarca'
   | 'Chaco'
