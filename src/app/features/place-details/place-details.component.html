@@ -3,8 +3,8 @@
     <div class="place-details-text">
       <div class="place-details-titles">
         <h2 class="place-title">{{ detailedPlace?.name }}</h2>
-        <h4>{{ detailedPlace?.province }}</h4>
-        <h5>{{ detailedPlace?.region }}</h5>
+        <h4 class="place-province">{{ detailedPlace?.province }}</h4>
+        <h5 class="place-region">{{ detailedPlace?.region }}</h5>
       </div>
 
       <p>{{ detailedPlace?.long_description }}</p>
@@ -19,6 +19,27 @@
         >
           <h4 class="activity-title">{{ activity.name }}</h4>
           <p>{{ activity.description }}</p>
+        </div>
+      </div>
+
+      <div *ngIf="!detailedWeather" class="weather-not-found">
+        <h4>No hay pronóstico disponible para este destino.</h4>
+      </div>
+
+      <div *ngIf="detailedWeather" class="weather-data">
+        <h3>Pronóstico de los próximos días</h3>
+        <div *ngIf="detailedWeather" class="weather-container">
+          <div
+            *ngFor="let forecast of detailedWeather.forecast.forecastday"
+            class="weather-box"
+          >
+            <p class="forecast-date">{{ forecast.date | date : "dd/MM" }}</p>
+            <div class="weather-temperature">
+              <p class="forecast-temperature">{{ forecast.day.mintemp_c }}ºC</p>
+              <p class="forecast-temperature">{{ forecast.day.maxtemp_c }}ºC</p>
+            </div>
+            <img [src]="forecast.day.condition.icon" class="forecast-icon" />
+          </div>
         </div>
       </div>
     </div>

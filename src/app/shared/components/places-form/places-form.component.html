@@ -4,7 +4,7 @@
       <h3>Información General</h3>
 
       <div>
-        <label for="name">Nombre: </label>
+        <label for="name">Nombre </label>
         <input type="text" formControlName="name" />
 
         <p
@@ -18,7 +18,7 @@
       </div>
 
       <div>
-        <label for="province">Provincia: </label>
+        <label for="province">Provincia </label>
         <select formControlName="province">
           <option *ngFor="let province of provinceArray" [value]="province">
             {{ province }}
@@ -37,7 +37,7 @@
       </div>
 
       <div>
-        <label for="region">Región: </label>
+        <label for="region">Región </label>
         <select formControlName="region">
           <option *ngFor="let region of regionArray" [value]="region">
             {{ region }}
@@ -56,7 +56,7 @@
       </div>
 
       <div>
-        <label for="description">Descripción: </label>
+        <label for="description">Descripción </label>
         <input type="text" formControlName="description" />
 
         <p
@@ -71,7 +71,7 @@
       </div>
 
       <div class="long_description-class">
-        <label for="long_description">Descripción Larga: </label>
+        <label for="long_description">Descripción Larga </label>
         <textarea
           formControlName="long_description"
           cols="20"
@@ -100,17 +100,17 @@
       >
         <div>
           <label>
-            Nombre:
+            Nombre
             <input type="text" formControlName="name" />
           </label>
 
           <label>
-            Descripción:
+            Descripción
             <input type="text" formControlName="description" />
           </label>
 
           <label>
-            Tipo:
+            Tipo
             <input type="text" formControlName="type" />
           </label>
         </div>
@@ -120,7 +120,7 @@
     <div class="main-image-form">
       <h3>Imagen Principal</h3>
       <div>
-        <label for="mainimg">Portada: </label>
+        <label for="mainimg">Portada </label>
         <input type="text" formControlName="mainimg" />
 
         <p
@@ -141,10 +141,10 @@
         *ngFor="let image of imagesArray.controls; let i = index"
         [formGroupName]="i"
       >
-        <label for="id">ID: </label>
+        <label for="id">ID </label>
         <input type="text" formControlName="id" readonly="readonly" />
 
-        <label for="url">URL: </label>
+        <label for="url">URL </label>
         <input type="text" formControlName="url" />
       </div>
     </div>

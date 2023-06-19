@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Output } from '@angular/core';
 import { Province } from 'src/app/core/models/types/region-type';
+import { PROVINCE_ARRAY } from 'src/app/core/models/constants/constants';
 
 @Component({
   selector: 'app-filterbox',
@@ -8,6 +9,8 @@ import { Province } from 'src/app/core/models/types/region-type';
 })
 export class FilterboxComponent {
   @Output() public optionChanges = new EventEmitter<Province>();
+
+  public provinceArray = PROVINCE_ARRAY;
 
   public selectedProvince: Province = '';
 

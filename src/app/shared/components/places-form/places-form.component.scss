@@ -1,7 +1,7 @@
 @import '../../../../styles/general/variables';
 
 .form-container {
-    margin-top: 40px;
+    height: 75vh;
     display: flex;
     align-items: center;
     justify-content: space-around;
@@ -32,13 +32,13 @@
         .main-image-form {
             display: flex;
             flex-direction: column;
-            gap: 10px;
+            gap: 2px;
         }
     }
 
     .road-image {
-        width: 800px;
-        height: 600px;
+        width: 600px;
+        height: 585px;
         border-radius: 15px;
     }
 }

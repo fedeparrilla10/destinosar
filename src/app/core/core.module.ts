@@ -7,8 +7,18 @@ import { RouterModule } from '@angular/router';
 import { LoadingComponent } from './loading/loading.component';
 
 @NgModule({
-  declarations: [HeaderComponent, FooterComponent, NavbarComponent, LoadingComponent],
+  declarations: [
+    HeaderComponent,
+    FooterComponent,
+    NavbarComponent,
+    LoadingComponent,
+  ],
   imports: [CommonModule, RouterModule],
-  exports: [HeaderComponent, FooterComponent, NavbarComponent],
+  exports: [
+    HeaderComponent,
+    FooterComponent,
+    NavbarComponent,
+    LoadingComponent,
+  ],
 })
 export class CoreModule {}

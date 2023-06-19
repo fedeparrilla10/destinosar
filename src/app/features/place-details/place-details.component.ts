@@ -4,35 +4,74 @@ import { PlacesI } from 'src/app/core/models/interfaces/places-interface';
 import { PlacesService } from 'src/app/core/services/places.service';
 import { ActivitiesI } from 'src/app/core/models/interfaces/places-interface';
 import { ImageI } from 'src/app/core/models/interfaces/places-interface';
+import { WeatherI } from 'src/app/core/models/interfaces/weather-interface';
+import { WeatherService } from 'src/app/core/services/weather.service';
+import { switchMap, tap } from 'rxjs';
 
 @Component({
   selector: 'app-place-details',
   templateUrl: './place-details.component.html',
   styleUrls: ['./place-details.component.scss'],
 })
-export class PlaceDetailsComponent implements OnInit {
+export class PlaceDetailsComponent {
   public detailedPlace?: PlacesI;
+  public detailedWeather?: WeatherI;
   public allImages?: ImageI[];
   public allActivities?: ActivitiesI[];
+  public allWeather: WeatherI[] = [];
 
   constructor(
     private route: ActivatedRoute,
-    private placesService: PlacesService
-  ) {}
+    private placesService: PlacesService,
+    private weatherService: WeatherService
+  ) {
+    this.route.params
+      .pipe(
+        switchMap((params) => {
+          const id = params['id'];
+          return this.placesService.getPlace(id);
+        }),
+        tap((detailedPlace: PlacesI) => {
+          this.detailedPlace = detailedPlace;
 
-  ngOnInit(): void {
-    this.getPlaceDetails();
-  }
-
-  private getPlaceDetails() {
-    this.route.params.subscribe((params) => {
-      const id = params['id'];
-      this.placesService.getPlace(id).subscribe((place: PlacesI) => {
-        this.detailedPlace = place;
-
-        this.allImages = [...this.detailedPlace.images];
-        this.allActivities = [...this.detailedPlace.activities];
+          this.allImages = [...this.detailedPlace.images];
+          this.allActivities = [...this.detailedPlace.activities];
+        }),
+        switchMap((detailedPlace: PlacesI) => {
+          return this.weatherService.getWeatherData(detailedPlace.name);
+        })
+      )
+      .subscribe((weather: WeatherI[]) => {
+        this.detailedWeather = weather[0];
+        console.log(this.detailedWeather);
       });
-    });
   }
 }
+// ngOnInit(): void {
+//   this.getPlaceDetails();
+// }
+
+// private getPlaceDetails(): void {
+//   this.route.params.subscribe((params) => {
+//     const id = params['id'];
+//     this.placesService.getPlace(id).subscribe((place: PlacesI) => {
+//       this.detailedPlace = place;
+
+//       this.allImages = [...this.detailedPlace.images];
+//       this.allActivities = [...this.detailedPlace.activities];
+
+//       const placeName = this.detailedPlace.name;
+
+//       this.getWeather(placeName);
+//     });
+//   });
+// }
+
+// private getWeather(placeName: string): void {
+//   this.weatherService
+//     .getWeatherData(placeName)
+//     .subscribe((weather: WeatherI[]) => {
+//       this.allWeather = weather;
+//       console.log(weather);
+//     });
+// }
