@@ -1,0 +1,22 @@
+@import '../../../styles/general/variables';
+
+.about-us-container {
+    width: 100%;
+    height: 75vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .about-us-text {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        width: 45%;
+
+        .about-us-sign {
+            font-family: $sign-font;
+            font-size: 27px;
+            letter-spacing: 1.5px;
+        }
+    }
+}
