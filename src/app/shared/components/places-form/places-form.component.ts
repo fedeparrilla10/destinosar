@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, Output, OnInit } from '@angular/core';
 import {
   FormControl,
   FormGroup,
@@ -21,6 +21,7 @@ import { REGION_ARRAY } from 'src/app/core/models/constants/constants';
 })
 export class PlacesFormComponent implements OnInit {
   @Input() public place?: PlacesI;
+  @Output() public placesFormDirty: EventEmitter<void> = new EventEmitter();
 
   public provinceArray: Province[] = PROVINCE_ARRAY;
   public regionArray: Region[] = REGION_ARRAY;
@@ -58,6 +59,12 @@ export class PlacesFormComponent implements OnInit {
       activities: this.fb.array([]),
       mainimg: new FormControl(this.place?.mainimg || '', Validators.required),
       images: this.fb.array([]),
+    });
+
+    this.placesForm?.valueChanges.subscribe(() => {
+      if (this.placesForm?.dirty) {
+        this.placesFormDirty.emit();
+      }
     });
   }
 
