@@ -3,32 +3,50 @@
 
     .filter-container {
         display: flex;
+        flex-direction: column;
         align-items: center;
-        justify-content: center;
-        gap: 20px;
-    
-        .search-box {
-            margin-top: 15px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-    
-        .filter-box {
-            margin-top: 15px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        
+        gap: 10px;
+        margin-top: 25px;
     }
-    
+
     .places-container {
+        margin-top: 20px;
         display: flex;
+        flex-direction: column;
+        justify-content: center;
         align-items: center;
-        flex-wrap: wrap;
-        justify-content: space-around;
-        margin: 40px;
     }
 }
 
+@media (min-width: 1080px) {
+    .list-container {
+
+        .filter-container {
+            flex-direction: row;
+            justify-content: center;
+            gap: 20px;
+        
+            .search-box {
+                margin-top: 15px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+        
+            .filter-box {
+                margin-top: 15px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            
+        }
+        
+        .places-container {
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            margin: 40px;
+        }
+    }
+}

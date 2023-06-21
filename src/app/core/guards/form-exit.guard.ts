@@ -7,7 +7,7 @@ export const formExitGuard: CanDeactivateFn<NewPlaceComponent> = (
   currentState,
   nextState
 ) => {
-  if (component.isDirty) {
+  if (component.isDirty && !component.isValid) {
     return window.confirm(
       '¡El formulario está incompleto! ¿Seguro que quieres salir?'
     );

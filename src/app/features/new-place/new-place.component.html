@@ -1,14 +1,17 @@
-<h4><a [routerLink]="'/user-list'">Volver atrás</a></h4>
+<h4 class="back-link"><a [routerLink]="'/user-list'">« Volver atrás</a></h4>
 
 <section class="form-container">
   <div class="new-place-titles">
     <h2>¡Agrega tu propio destino!</h2>
-    <p>
+    <p class="new-place-text">
       Argentina es un país enorme y con mucha cantidad (y variedad) de paisajes.
       En este apartado se pueden agregar diferentes destinos que creas que valga
       la pena mostrar entre los que proponemos nosotros.
     </p>
   </div>
 
-  <app-places-form (placesFormDirty)="setPlacesFormAsDirty()"></app-places-form>
+  <app-places-form
+    (placesFormDirty)="setPlacesFormAsDirty()"
+    (placesFormValid)="formIsValid()"
+  ></app-places-form>
 </section>

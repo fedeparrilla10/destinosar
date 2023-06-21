@@ -1,22 +1,31 @@
 @import '../../../styles/general/variables';
 
 .about-us-container {
-    width: 100%;
     height: 75vh;
     display: flex;
     align-items: center;
-    justify-content: center;
 
     .about-us-text {
         display: flex;
         flex-direction: column;
         gap: 15px;
-        width: 45%;
+        margin-left: 12px;
+    }
 
-        .about-us-sign {
-            font-family: $sign-font;
-            font-size: 27px;
-            letter-spacing: 1.5px;
+    .about-us-sign {
+        font-family: $sign-font;
+        font-size: 27px;
+        letter-spacing: 1.5px;
+    }
+}
+
+@media (min-width: 1080px) {
+    .about-us-container {
+        width: 100%;
+        justify-content: center;
+
+        .about-us-text {
+            width: 45%;
         }
     }
 }

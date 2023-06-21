@@ -43,35 +43,6 @@ export class PlaceDetailsComponent {
       )
       .subscribe((weather: WeatherI[]) => {
         this.detailedWeather = weather[0];
-        console.log(this.detailedWeather);
       });
   }
 }
-// ngOnInit(): void {
-//   this.getPlaceDetails();
-// }
-
-// private getPlaceDetails(): void {
-//   this.route.params.subscribe((params) => {
-//     const id = params['id'];
-//     this.placesService.getPlace(id).subscribe((place: PlacesI) => {
-//       this.detailedPlace = place;
-
-//       this.allImages = [...this.detailedPlace.images];
-//       this.allActivities = [...this.detailedPlace.activities];
-
-//       const placeName = this.detailedPlace.name;
-
-//       this.getWeather(placeName);
-//     });
-//   });
-// }
-
-// private getWeather(placeName: string): void {
-//   this.weatherService
-//     .getWeatherData(placeName)
-//     .subscribe((weather: WeatherI[]) => {
-//       this.allWeather = weather;
-//       console.log(weather);
-//     });
-// }

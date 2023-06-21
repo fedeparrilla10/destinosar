@@ -1,5 +1,12 @@
 .main-info {
-    font-size: 18px;
-    max-width: 1200px;
-    text-align: center;
+    font-size: 16px;
+    margin: 0 15px;
+}
+
+@media (min-width: 1080px) {
+    .main-info {
+        font-size: 18px;
+        max-width: 1200px;
+        text-align: center;
+    }
 }

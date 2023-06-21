@@ -7,8 +7,13 @@ import { Component } from '@angular/core';
 })
 export class NewPlaceComponent {
   public isDirty: boolean = false;
+  public isValid: boolean = false;
 
   public setPlacesFormAsDirty() {
     this.isDirty = true;
+  }
+
+  public formIsValid() {
+    this.isValid = true;
   }
 }

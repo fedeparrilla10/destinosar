@@ -1,11 +1,18 @@
-.gallery-container {
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    margin: 10px 50px;
-    gap: 10px;
+.gallery-img {
+    display: none;
+}
 
-    .gallery-img {
-        border-radius: 12px;
+@media (min-width: 1080px) {
+    .gallery-container {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        margin: 10px 50px;
+        gap: 10px;
+
+        .gallery-img {
+            display: block;
+            border-radius: 12px;
+        }
     }
 }

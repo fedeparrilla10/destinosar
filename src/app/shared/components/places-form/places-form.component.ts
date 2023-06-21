@@ -22,6 +22,7 @@ import { REGION_ARRAY } from 'src/app/core/models/constants/constants';
 export class PlacesFormComponent implements OnInit {
   @Input() public place?: PlacesI;
   @Output() public placesFormDirty: EventEmitter<void> = new EventEmitter();
+  @Output() public placesFormValid: EventEmitter<void> = new EventEmitter();
 
   public provinceArray: Province[] = PROVINCE_ARRAY;
   public regionArray: Region[] = REGION_ARRAY;
@@ -62,8 +63,14 @@ export class PlacesFormComponent implements OnInit {
     });
 
     this.placesForm?.valueChanges.subscribe(() => {
-      if (this.placesForm?.dirty) {
+      if (this.placesForm?.dirty && !this.placesForm?.valid) {
         this.placesFormDirty.emit();
+      }
+    });
+
+    this.placesForm?.valueChanges.subscribe(() => {
+      if (this.placesForm?.valid) {
+        this.placesFormValid.emit();
       }
     });
   }
@@ -179,7 +186,6 @@ export class PlacesFormComponent implements OnInit {
             isCustom: true,
           });
       newPlaceRequest.subscribe((place: PlacesI) => {
-        console.log(place);
         this.placesForm?.reset();
         this.router.navigateByUrl('user-list');
       });

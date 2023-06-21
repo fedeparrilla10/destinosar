@@ -98,7 +98,7 @@
         *ngFor="let activity of activitiesArray.controls; let i = index"
         [formGroupName]="i"
       >
-        <div>
+        <div class="activity-form">
           <label>
             Nombre
             <input type="text" formControlName="name" />
@@ -141,15 +141,23 @@
         *ngFor="let image of imagesArray.controls; let i = index"
         [formGroupName]="i"
       >
-        <label for="id">ID </label>
-        <input type="text" formControlName="id" readonly="readonly" />
+        <div class="image-form">
+          <label for="id">ID </label>
+          <input type="text" formControlName="id" readonly="readonly" />
 
-        <label for="url">URL </label>
-        <input type="text" formControlName="url" />
+          <label for="url">URL </label>
+          <input type="text" formControlName="url" />
+        </div>
       </div>
     </div>
 
-    <button type="submit" (click)="newCustomPlace()">Submit</button>
+    <button
+      type="submit"
+      (click)="newCustomPlace()"
+      [disabled]="!placesForm.valid"
+    >
+      Submit
+    </button>
   </form>
 
   <div>
