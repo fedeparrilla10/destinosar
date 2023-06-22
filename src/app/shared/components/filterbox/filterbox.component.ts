@@ -14,7 +14,7 @@ export class FilterboxComponent {
 
   public selectedProvince: Province = '';
 
-  optionChanged(value: Province) {
+  public optionChanged(value: Province) {
     this.optionChanges.emit(value);
   }
 }

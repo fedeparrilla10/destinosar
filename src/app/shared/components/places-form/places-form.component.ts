@@ -35,13 +35,13 @@ export class PlacesFormComponent implements OnInit {
     private router: Router
   ) {}
 
-  ngOnInit() {
+  public ngOnInit() {
     this.generatePlacesForm();
     this.putActivities();
     this.putImages();
   }
 
-  generatePlacesForm() {
+  public generatePlacesForm() {
     this.placesForm = this.fb.group({
       name: new FormControl(this.place?.name || '', Validators.required),
       province: new FormControl(

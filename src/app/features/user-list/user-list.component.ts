@@ -12,7 +12,7 @@ export class UserListComponent {
 
   constructor(private placesService: PlacesService) {}
 
-  ngOnInit(): void {
+  public ngOnInit(): void {
     this.getPlaces();
   }
 

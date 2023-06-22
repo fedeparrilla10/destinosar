@@ -10,7 +10,7 @@ export class SearchboxComponent {
 
   public searchInput: string = '';
 
-  searchForInputChanges() {
+  public searchForInputChanges() {
     this.inputChanges.emit(this.searchInput);
   }
 }

@@ -19,7 +19,6 @@ export class EditPlaceComponent {
       const id = params['id'];
       this.placesService.getPlace(id).subscribe((place: PlacesI) => {
         this.place = place;
-        console.log(place);
       });
     });
   }

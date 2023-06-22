@@ -10,7 +10,7 @@ export class ElementComponent {
   @Input() public eachPlace?: PlacesI;
   @Output() public removePlace: EventEmitter<PlacesI> = new EventEmitter();
 
-  deletePlace(event: Event) {
+  public deletePlace(event: Event) {
     event.preventDefault();
     event.stopPropagation();
     this.removePlace.emit(this.eachPlace);

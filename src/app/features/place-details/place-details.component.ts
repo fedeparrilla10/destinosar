@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { PlacesI } from 'src/app/core/models/interfaces/places-interface';
 import { PlacesService } from 'src/app/core/services/places.service';

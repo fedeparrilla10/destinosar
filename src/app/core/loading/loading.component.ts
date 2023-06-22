@@ -11,7 +11,7 @@ export class LoadingComponent implements OnInit {
 
   constructor(private loadingService: LoadingService) {}
 
-  ngOnInit(): void {
+  public ngOnInit(): void {
     this.loadingService._loading.subscribe((isLoading) => {
       this.showLoading = isLoading;
     });

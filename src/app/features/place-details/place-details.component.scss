@@ -13,6 +13,10 @@
             display: flex;
             flex-direction: column;
             gap: 12px;
+
+            .weather-not-found {
+                text-align: center;
+            }
         }
 
         .place-details-activities-container {
@@ -20,6 +24,8 @@
             font-size: 15px;
             display: flex;
             gap: 20px;
+            align-items: center;
+            justify-content: center;
 
             .place-details-activities-box {
                 display: flex;
