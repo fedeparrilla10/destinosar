@@ -1,27 +1,58 @@
-# MyProject
+# DestinosAR
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.0.2.
+DestinosAR is an Angular application that showcases the best places to visit in Argentina. This application allows you to explore a wide range of tourist destinations and discover the beauty and diversity that this beautiful country has to offer.
 
-## Development server
+## Key Features
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+- **CRUD**: DestinosAR allows you to perform create, read, update, and delete operations on tourist destinations. You can add new destinations, edit existing information, and remove destinations that you no longer wish to display.
 
-## Code scaffolding
+- **Guards**: Guards have been implemented to protect the application routes and ensure that only authorized users can access certain sections. This helps maintain data privacy and integrity.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- **Interceptors**: Interceptors are used to intercept HTTP requests and responses in the application. This allows adding additional logic before sending a request or manipulating the received response. In DestinosAR, interceptors have been implemented to add custom headers, handle errors, and display loading indicators.
 
-## Build
+- **Loading Service**: The application includes a loading service that displays a loading indicator while asynchronous requests are being made. This improves the user experience by providing visual feedback during operations that may take time.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+- **SwitchMap**: The `switchMap` operator from RxJS has been used to handle HTTP requests and prevent concurrency issues. This ensures that only the latest request is processed, avoiding unexpected results due to out-of-order requests.
 
-## Running unit tests
+## Prerequisites
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Before running the DestinosAR application in your local environment, make sure you have the following components installed:
 
-## Running end-to-end tests
+- Node.js: [https://nodejs.org](https://nodejs.org)
+- Angular CLI: Run `npm install -g @angular/cli` to install it globally.
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+## Setup
 
-## Further help
+Follow these steps to set up and run the DestinosAR application:
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+1. Clone the DestinosAR repository: `git clone https://github.com/yourusername/destinosar.git`
+2. Navigate to the project directory: `cd destinosar`
+3. Install the dependencies: `npm install`
+4. Start the application: `ng serve`
+5. Open your web browser and go to `http://localhost:4200`
+
+You should now be able to see the DestinosAR application in your local browser!
+
+## Contribution
+
+If you would like to contribute to DestinosAR, follow these steps:
+
+1. Fork the DestinosAR repository.
+2. Create a new branch for your feature or bug fix: `git checkout -b branch-name`.
+3. Make your modifications and fixes.
+4. Ensure your code follows the style conventions and passes the tests.
+5. Commit your changes: `git commit -m "Description of the changes"`.
+6. Push your changes to the remote repository: `git push origin branch-name`.
+7. Open a pull request in the original repository.
+
+We appreciate all contributions that help improve DestinosAR and make it even better.
+
+## License
+
+DestinosAR is distributed under the MIT license. For more information, see the [LICENSE](LICENSE) file in this repository.
+
+## Contact
+
+If you have any questions, suggestions, or inquiries related to DestinosAR, feel free to contact our development team at [contact@destinosar.com](mailto:contact@destinosar.com).
+
+We hope you enjoy exploring the wonderful tourist destinations in Argentina with DestinosAR!
