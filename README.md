@@ -1,27 +1,28 @@
-# MyProject
+# DestinosAR
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.0.2.
+DestinosAR is an Angular application that showcases the best places to visit in Argentina. This application allows you to explore a wide range of tourist destinations and discover the beauty and diversity that this beautiful country has to offer.
 
-## Development server
+## Key Features
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+- **CRUD**: DestinosAR allows you to perform create, read, update, and delete operations on tourist destinations. You can add new destinations, edit existing information, and remove destinations that you no longer wish to display.
 
-## Code scaffolding
+- **Guards**: Guards have been implemented to protect the application routes and ensure that only authorized users can access certain sections. This helps maintain data privacy and integrity.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- **Interceptors**: Interceptors are used to intercept HTTP requests and responses in the application. This allows adding additional logic before sending a request or manipulating the received response. In DestinosAR, interceptors have been implemented to add custom headers, handle errors, and display loading indicators.
 
-## Build
+- **Loading Service**: The application includes a loading service that displays a loading indicator while asynchronous requests are being made. This improves the user experience by providing visual feedback during operations that may take time.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+- **SwitchMap**: The `switchMap` operator from RxJS has been used to handle HTTP requests and prevent concurrency issues. This ensures that only the latest request is processed, avoiding unexpected results due to out-of-order requests.
 
-## Running unit tests
+## Prerequisites
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Before running the DestinosAR application in your local environment, make sure you have the following components installed:
 
-## Running end-to-end tests
+- Node.js: [https://nodejs.org](https://nodejs.org)
+- Angular CLI: Run `npm install -g @angular/cli` to install it globally.
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+## Contact
 
-## Further help
+If you have any questions, suggestions, or inquiries related to DestinosAR, feel free to contact me at [federicoivanpd@gmail.com](mailto:federicoivanpd@gmail.com).
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+We hope you enjoy exploring the wonderful tourist destinations in Argentina with DestinosAR!
