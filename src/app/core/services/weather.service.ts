@@ -13,7 +13,7 @@ import { map } from 'rxjs';
 })
 export class WeatherService {
   public BASE_URL =
-    'http://api.weatherapi.com/v1/forecast.json?key=3c8a83db797c409db85123728231806&';
+    'https://api.weatherapi.com/v1/forecast.json?key=3c8a83db797c409db85123728231806&';
 
   constructor(private http: HttpClient) {}
 
